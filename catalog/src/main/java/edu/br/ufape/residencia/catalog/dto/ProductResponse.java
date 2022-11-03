@@ -11,6 +11,7 @@ import lombok.Data;
 
 @Data
 public class ProductResponse {
+	private long id;
 	private String name;
 	private String detail;
 	private Date releaseDate;
@@ -20,6 +21,7 @@ public class ProductResponse {
 	private long categoryId;
 	
 	public ProductResponse(Product product) {
+		this.id = product.getId();
 		this.name = product.getName();
 		this.detail = product.getDetail();
 		this.releaseDate = product.getReleaseDate();
