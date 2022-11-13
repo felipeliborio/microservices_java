@@ -1,0 +1,35 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-CatalogApplication<catalog>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "edu.br.ufape.residencia.catalog.CatalogApplication",
+      "projectName": "catalog",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=51537 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=catalog"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ReviewsApplication<reviews>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "br.edu.ufape.residencia.reviews.ReviewsApplication",
+      "projectName": "reviews",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-AgregateApplication<agregate>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "br.edu.ufape.residencia.agregate.AgregateApplication",
+      "projectName": "agregate",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
