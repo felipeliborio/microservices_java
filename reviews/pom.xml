@@ -26,8 +26,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -38,13 +36,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>edu.br.ufape.residencia</groupId>
 			<artifactId>util</artifactId>
 			<version>0.0.1</version>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -68,5 +64,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

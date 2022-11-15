@@ -32,9 +32,9 @@ public class ProductStatistic {
 		} else {
 			score = BigDecimal.valueOf(5);
 			stars = new HashMap<Integer, Integer>();
-			for(int i = 1; i <=5; i++)
+			for(int i = 1; i <=5; i++) {
 				stars.put(i, 0);
+			}
 		}
-
 	}
 }

@@ -16,5 +16,4 @@ public class AgregateApplication {
 	RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
-
 }

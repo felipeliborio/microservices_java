@@ -20,8 +20,8 @@ public class Review {
 	private String title;
 	private String body;
 	private long productId;
-	@Min(value=1, message = "Nota inválida")
-	@Max(value=5, message = "Nota inválida")
+	@Min(value=1, message = "Invalid rating")
+	@Max(value=5, message = "Invalid rating")
 	@Column(columnDefinition = "integer default 5")
 	private long rating;
 }

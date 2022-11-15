@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import br.edu.ufape.residencia.agregate.dto.ProductAgregateDto;
 import br.edu.ufape.residencia.util.dto.ProductDto;
 import br.edu.ufape.residencia.util.dto.ReviewDto;
@@ -28,22 +26,22 @@ public class AgregateController {
 	private String productHost;
 	@Value("${app.review-service.host}")
 	private String reviewHost;
-		
-	
+			
 	@GetMapping("{id}")
 	public ProductAgregateDto get(@PathVariable long id) {
-		String urlProduct = productHost + "/produto/" + id;
+		String urlProduct = productHost + "/product/" + id;
 		String urlReview = reviewHost + "/review/product/" + id;
 		
 		ProductDto product = restTemplate.getForObject(urlProduct, ProductDto.class);
-		List<ReviewDto> reviews = restTemplate.exchange(
-										urlReview, 
-										HttpMethod.GET, 
-										null, 
-										new ParameterizedTypeReference<List<ReviewDto>>() {})
-								.getBody();
+		List<ReviewDto> reviews = restTemplate
+			.exchange(
+				urlReview, 
+				HttpMethod.GET, 
+				null, 
+				new ParameterizedTypeReference<List<ReviewDto>>() {}
+			)
+			.getBody();
 		return new ProductAgregateDto(product, reviews);
-		
 	}
 	
 	@GetMapping("product/{id}")
@@ -52,5 +50,4 @@ public class AgregateController {
 		String json = restTemplate.getForObject(urlReview, String.class);
 		return json;
 	}
-
 }

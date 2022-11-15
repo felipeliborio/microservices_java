@@ -29,5 +29,4 @@ public class ReviewController {
 	public List<Review> getProductReviews(@PathVariable long id) {
 		return repository.findByProductId(id);
 	}
-
 }
