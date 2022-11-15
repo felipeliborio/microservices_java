@@ -19,8 +19,8 @@ public class CategoryResponse {
 		this.name = c.getName();
 		this.detail = c.getDetail();
 		this.icon = c.getIcon();
-		if(c.getParentCategory() != null)
+		if(c.getParentCategory() != null) {
 			this.parentCategoryId = c.getParentCategory().getId();
+		}
 	}
-	
 }

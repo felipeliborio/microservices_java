@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import edu.br.ufape.residencia.catalog.model.Category;
 
-
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long>{
 	public List<Category> findByNameContaining(String descricao);

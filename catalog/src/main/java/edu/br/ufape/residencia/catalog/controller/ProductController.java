@@ -14,25 +14,22 @@ import edu.br.ufape.residencia.catalog.dto.ProductResponse;
 import edu.br.ufape.residencia.catalog.facade.Facade;
 
 @RestController
-public class ProdutoController {
-	
+public class ProductController {
 	@Autowired
 	private Facade facade;
 
-	@GetMapping(value = "/produto")
+	@PostMapping(value = "/product")
+	public ProductResponse create(@RequestBody ProductRequest product) {
+		return facade.createProduct(product);
+	}
+
+	@GetMapping(value = "/product/{id}")
+	public ProductResponse getProduct(@PathVariable long id) {
+		return facade.loadProduct(id);
+	}
+
+	@GetMapping(value = "/product")
 	public List<ProductResponse> listAll() {
 		return facade.findAllProducts();
 	}
-	
-	@GetMapping(value = "/produto/{id}")
-	public ProductResponse getProduct(@PathVariable long id) {
-		return facade
-				.loadProduct(id);
-	}
-	
-	@PostMapping(value = "/produto")
-	public ProductResponse create(@RequestBody ProductRequest produto) {
-		return facade.createProduct(produto);
-	}
-
 }

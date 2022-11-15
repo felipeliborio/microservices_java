@@ -11,15 +11,12 @@ import edu.br.ufape.residencia.catalog.exception.NotFoundException;
 import edu.br.ufape.residencia.catalog.model.Category;
 import edu.br.ufape.residencia.catalog.repository.CategoryRepository;
 
-
-
 @Service
 public class CategoryService {
 	@Autowired
 	private CategoryRepository repository;
 	
 	public CategoryResponse createCategory(CategoryRequest categoryRequest) {
-		
 		return new CategoryResponse(repository.save(categoryRequest.toCategory()));
 	}
 	
@@ -44,5 +41,4 @@ public class CategoryService {
 		categoryResponse.setNestedCategories(this.findSubcategories(id));
 		return categoryResponse;
 	}
-
 }

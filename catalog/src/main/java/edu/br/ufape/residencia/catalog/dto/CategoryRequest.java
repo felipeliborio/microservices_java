@@ -9,27 +9,30 @@ import lombok.Data;
 
 @Data
 public class CategoryRequest {
-	@NotBlank(message = "A descrição é obrigatória")
-	@Length(min = 3, max=35, message = "A descrição deve ter entre 3 e 35 letras")
+	@NotBlank(message = "O nome é obrigatório")
+	@Length(min = 3, max=35, message = "O nome deve ter entre 3 e 35 letras")
 	private String name;
+	@NotBlank(message = "A descrição é obrigatória")
+	@Length(min = 3, max=35, message = "A descrição deve ter entre 3 e 254 letras")
 	private String detail;
 	private String icon;
 	private long parentCategoryId;
 
 	public Category toCategory() {
 		Category category = Category.builder()
-				.name(name)
-				.detail(detail)
-				.icon(icon)
-				.build();
+			.name(name)
+			.detail(detail)
+			.icon(icon)
+			.build();
+
 		if(parentCategoryId > 0) {
 			category.setParentCategory(
-					Category.builder()
+				Category.builder()
 					.id(parentCategoryId)
 					.build()
 			);
 		}
+		
 		return category;
 	}
-
 }

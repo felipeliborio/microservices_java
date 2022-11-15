@@ -1,6 +1,5 @@
 package edu.br.ufape.residencia.catalog.model;
 
-
 import java.util.Date;
 import java.util.List;
 
@@ -26,7 +25,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 public class Product {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -41,8 +39,4 @@ public class Product {
 	@ManyToOne
 	@JoinColumn(name = "categoryID")
 	private Category category;
-	
-
-	
-	
 }

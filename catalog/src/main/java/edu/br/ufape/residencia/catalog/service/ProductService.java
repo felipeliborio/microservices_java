@@ -32,8 +32,9 @@ public class ProductService {
 	
 	public ProductResponse loadProduct(long id) {
 		return new ProductResponse( 
-				repository.findById(id).orElseThrow( 
-						() -> new RuntimeException("It doesn't exist Product with id = " + id)));
+			repository
+				.findById(id)
+				.orElseThrow(() -> new RuntimeException("There is no product with id " + id))
+		);
 	}
-	
 }

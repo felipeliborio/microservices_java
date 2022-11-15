@@ -17,25 +17,22 @@ import edu.br.ufape.residencia.catalog.exception.NotFoundException;
 import edu.br.ufape.residencia.catalog.facade.Facade;
 
 @RestController
-public class CategoriaController {
+public class CategoryController {
 	@Autowired
 	private Facade facade;
 	
-	@PostMapping(value = "/categoria")
+	@PostMapping(value = "/category")
 	public CategoryResponse create(@RequestBody @Valid CategoryRequest category) {
-		
 		return facade.createCategory(category);
 	}
 	
-	@GetMapping(value = "/categoria/{id}")
+	@GetMapping(value = "/category/{id}")
 	public CategoryResponse find(@PathVariable long id) throws NotFoundException {
 		return facade.loadCategory(id);
 	}
 	
-	@GetMapping(value = "/categoria")
+	@GetMapping(value = "/category")
 	public List<CategoryResponse> listAll() {
 		return facade.findAllCategories();
 	}
-	
-	
 }
