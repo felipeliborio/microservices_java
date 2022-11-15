@@ -6,12 +6,10 @@
 	<artifactId>util</artifactId>
 	<version>0.0.1</version>
 	<name>util</name>
-
 	<properties>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
-	
 	<dependencies>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -20,8 +18,4 @@
 			<version>1.18.20</version>
 		</dependency>
 	</dependencies>
-
-
-
-
 </project>

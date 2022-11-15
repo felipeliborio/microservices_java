@@ -1,0 +1,23 @@
+server.port: 8083
+
+spring:
+  application:
+    name: interests
+  datasource:
+    url: jdbc:postgresql://localhost:55000/catalog
+    username: residencia
+    password: residencia
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+    
+#---
+spring:
+  config.activate.on-profile: docker
+  datasource:
+    url: jdbc:postgresql://host.docker.internal:55000/interests
+
+server.port: 8080
