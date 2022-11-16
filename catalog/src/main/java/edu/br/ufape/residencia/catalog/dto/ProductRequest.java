@@ -14,11 +14,11 @@ import lombok.Data;
 
 @Data
 public class ProductRequest {
-	@NotBlank(message = "O nome é obrigatório")
-	@Length(min = 3, max=35, message = "O nome deve ter entre 3 e 35 letras")
+	@NotBlank(message = "A name is required")
+	@Length(min = 3, max=35, message = "The name must have between 3 and 35 characters")
 	private String name;
-	@NotBlank(message = "A descrição é obrigatória")
-	@Length(min = 3, max=35, message = "A descrição deve ter entre 3 e 254 letras")
+	@NotBlank(message = "Detailing is required")
+	@Length(min = 3, max=255, message = "The details must have between 8 and 255 characters")
 	private String detail;
 	private Date releaseDate;
 	private boolean status;
@@ -27,17 +27,19 @@ public class ProductRequest {
 	private long categoryId;
 	
 	public Product toProduct() {
-		return Product.builder()
-				.name(name)
-				.detail(detail)
-				.releaseDate(releaseDate)
-				.status(status)
-				.images(images)
-				.category(					
-					Category.builder()
-						.id(categoryId)
-						.build()
-				)
-				.build();
+		return Product
+			.builder()
+			.name(name)
+			.detail(detail)
+			.releaseDate(releaseDate)
+			.status(status)
+			.images(images)
+			.category(					
+				Category
+					.builder()
+					.id(categoryId)
+					.build()
+			)
+			.build();
 	}
 }

@@ -14,20 +14,25 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 
-
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
 public class ValidationException extends ResponseEntityExceptionHandler {
 	
 	@Override
-	protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
-			HttpHeaders headers, HttpStatus status, WebRequest request) {
-	    Map<String, String> errors = new HashMap<>();
-	    ex.getBindingResult().getAllErrors().forEach((error) -> {
-	        String fieldName = ((FieldError) error).getField();
-	        String errorMessage = error.getDefaultMessage();
-	        errors.put(fieldName, errorMessage);
-	    });
+	protected ResponseEntity<Object> handleMethodArgumentNotValid(
+		MethodArgumentNotValidException ex,
+		HttpHeaders headers, 
+		HttpStatus status, 
+		WebRequest request
+	) {
+		Map<String, String> errors = new HashMap<>();
+		ex.getBindingResult()
+			.getAllErrors()
+			.forEach((error) -> {
+				String fieldName = ((FieldError) error).getField();
+				String errorMessage = error.getDefaultMessage();
+				errors.put(fieldName, errorMessage);
+			});
 		return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
 	}
 }

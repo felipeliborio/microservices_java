@@ -15,10 +15,17 @@ services:
       - "8082:8080"
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+  interests:
+    build: interests
+    mem_limit: 256m
+    ports:
+      - "8083:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
   agregate:
     build: agregate
     mem_limit: 256m
     ports:
       - "8080:8080"
     environment:
-      - SPRING_PROFILES_ACTIVE=docker      
+      - SPRING_PROFILES_ACTIVE=docker

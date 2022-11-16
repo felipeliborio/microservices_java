@@ -30,6 +30,16 @@
       "projectName": "agregate",
       "args": "",
       "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-InterestsApplication<interests>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "br.edu.ufape.residencia.interests.InterestsApplication",
+      "projectName": "interests",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
     }
   ]
 }

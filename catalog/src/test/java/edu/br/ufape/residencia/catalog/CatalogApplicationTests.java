@@ -1,16 +1,9 @@
 package edu.br.ufape.residencia.catalog;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.net.URI;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.server.LocalServerPort;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.HttpClientErrorException;
-import org.springframework.web.client.RestTemplate;
 
 @SpringBootTest(classes = CatalogApplication.class, webEnvironment=WebEnvironment.RANDOM_PORT)
 class CatalogApplicationTests {

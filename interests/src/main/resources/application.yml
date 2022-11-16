@@ -4,7 +4,7 @@ spring:
   application:
     name: interests
   datasource:
-    url: jdbc:postgresql://localhost:55000/catalog
+    url: jdbc:postgresql://localhost:55000/interests
     username: residencia
     password: residencia
   jpa:
@@ -13,8 +13,10 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
+    hibernate:
+      ddl-auto: update
     
-#---
+---
 spring:
   config.activate.on-profile: docker
   datasource:
